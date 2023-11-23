@@ -33,4 +33,4 @@ Exploring Frequencies via Feature Mixing and Meta-Learning for Improving Adversa
     - [JPEG](https://github.com/thu-ml/ares/blob/main/ares/defense/jpeg_compression.py): No extra parameters.
     - [NRP](https://github.com/Muzammal-Naseer/NRP): purifier=NRP, dynamic=True, base_model=Inc-v3<sub>*ens3*</sub>. Download it from the corresponding official repo.
  
-      More details in [third_party](https://github.com/JHL-HUST/VT/tree/main/third_party)https://github.com/JHL-HUST/VT/tree/main/third_party)
+      More details about evaluations on six more advanced in [third_party](https://github.com/JHL-HUST/VT/tree/main/third_party)
