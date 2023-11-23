@@ -17,10 +17,8 @@ from utils.DWT import *
 import random
 import pretrainedmodels
 parser = argparse.ArgumentParser()
-# parser.add_argument('--input_csv', type=str, default='./dataset/images.csv', help='Input directory with images.')
-# parser.add_argument('--input_dir', type=str, default='./dataset/images', help='Input directory with images.')
-parser.add_argument('--input_csv', type=str, default='/home/imt-3090-1/jjweng/defense/dev_data/val_rs.csv', help='Input directory with images.')
-parser.add_argument('--input_dir', type=str, default='/home/imt-3090-1/jjweng/defense/dev_data/val_rs', help='Input directory with images.')
+parser.add_argument('--input_csv', type=str, default='./dataset/images.csv', help='Input directory with images.')
+parser.add_argument('--input_dir', type=str, default='./dataset/images', help='Input directory with images.')
 parser.add_argument('--output_dir', type=str, default='./adv_img', help='Source Models.')
 parser.add_argument("--max_epsilon", type=float, default=16.0, help="Maximum size of adversarial perturbation.")
 parser.add_argument("--num_iter_set", type=int, default=10, help="Number of iterations.")
@@ -172,8 +170,6 @@ def main():
         grad_pre_test = 0
 
         for j in range(num_iter):
-            feat_x_ll = feat_x_ll
-            feat_x_hh = feat_x_hh
             x_temp = x_g.clone()
             adv_train = []
             for n in range(N):
@@ -204,7 +200,7 @@ def main():
 
         adv_img_np = x_g.detach().cpu().numpy()
         adv_img_np = np.transpose(adv_img_np, (0, 2, 3, 1)) * 255
-        save_image(adv_img_np, images_ID, './results_new/'+opt.model_type)
+        save_image(adv_img_np, images_ID, './results/'+opt.model_type)
 
 if __name__ == '__main__':
     main()
